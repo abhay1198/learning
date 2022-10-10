@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="abhay" translate="label" sortOrder="10">
+            <label>Abhay</label>
+        </tab>
+        <section id="learning" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Learning</label>
+            <tab>abhay</tab>
+            <resource>Abhay_Learning::learning_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="display_text" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Display Text</label>
+                    <comment>To show text Message in the Frontend.</comment>
+                </field>
+                <field id="display_dropdown" translate="label comment" type="select" sortOrder="3" showInDefault="1" showInStore="0" showInWebsite="1" >
+                   <label>To show Drop Down List</label>
+                   <source_model>Abhay\Learning\Model\Config\Source\DisplayDropDown</source_model>
+               </field>
+               <field id="redio_button" translate="label" type="radios" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>To show Radio Button</label>
+                    <source_model>Abhay\Learning\Model\Config\Source\DisplayRadioButton</source_model>
+                </field>
+                <field id="multi_option" translate="label" type="multiselect" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>To show multi select list </label>
+                    <source_model>Abhay\Learning\Model\Config\Source\MultiOption</source_model>
+                </field>
+                <field id="text_area" translate="label" type="textarea" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="0">
+                   <label>To show text area message</label>
+               </field>
+            </group>
+        </section>
+    </system>
+</config>

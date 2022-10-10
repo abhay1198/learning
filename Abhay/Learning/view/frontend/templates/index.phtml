@@ -1,0 +1,50 @@
+<?php
+$helper = $this->helper('Abhay\Learning\Helper\Data');
+$enable = $helper->isEnable();
+$message = $helper->DisplayMessage();
+$dropDown = $helper->DisplayDropDown();
+$radioValue = $helper->RadioButtton();
+$textareamsg = $helper->TextMsg();
+
+$getdropDown=$helper->getDropDownValue();
+$getMultiOption = $helper->getMultiOptionValue();
+
+$multiselect = $helper->MultiSelect();
+$multiselectOption = explode(',',$multiselect);
+
+?>
+<table border="1px">
+  <tr>
+    <td>Module Enable or Disable Value:</td>
+    <td><?php echo $enable; ?></td>
+  </tr>
+  <tr>
+    <td>Display Message:</td>
+    <td><?php echo $message; ?></td>
+  </tr>
+  <tr>
+    <td>Drop Down Value:</td>
+    <td><?php echo $getdropDown[$dropDown]->getText(); ?></td>
+  </tr>
+  <tr>
+    <td>Radio Button Value:</td>
+    <td><?php echo $radioValue; ?></td>
+  </tr>
+  <tr>
+    <td>Text Area Messgae:</td>
+    <td><?php echo $textareamsg; ?></td>
+  </tr>
+  <tr>
+    <td>Multi Select Value:</td>
+    <td>
+      <?php
+      foreach ($multiselectOption as  $value) {
+        foreach ($getMultiOption as  $valuemulti) {
+          if($value == $valuemulti['value'])
+          echo $valuemulti['label']->getText().",";
+        }
+      }
+      ?>
+    </td>
+  </tr>
+</table>
